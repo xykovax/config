@@ -88,6 +88,9 @@ init()
     init_vim
     echo "Done! :)"
 }
-
+init_time()
+{
+	sudo date -s "$(wget -qSO- --max-redirect=0 cbc.ca 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
+}
 # MAIN
 init
